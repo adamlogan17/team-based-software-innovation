@@ -93,7 +93,6 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
-AUTH_USER_MODEL = 'database.CustomUser'
 
 AUTH_PASSWORD_VALIDATORS = [
     {

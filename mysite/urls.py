@@ -20,7 +20,7 @@ from django.urls import path, include, re_path
 from main.views import *
 
 urlpatterns = [
-
+    path('', include('main.urls')),
 ]
 
 admin.site.site_header = "Administration"
