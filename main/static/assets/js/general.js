@@ -1,7 +1,7 @@
 var pathwayData = ''; // global variable that will hold information on each of the pathways which is taken from the database
 
 /**
- * @Author - @DeanLogan
+ * @Author - @AdamLogan
  * @Description - Executes when the page loads to ensure proper initialization and sizing of UI elements.
  * Handles navigation, theme, font size, sign-up data, and sets up event listeners.
  */
@@ -17,7 +17,7 @@ function pageLoad() {
 
 
 /**
- * @Author - @DeanLogan
+ * @Author - @AdamLogan
  * @Description - Toggles the side bar (nav) open or closed, and updates its state in session storage.
  * Adjusts UI elements by calling resizeNav and resizeContentDiv functions.
  */
@@ -40,7 +40,7 @@ function navToggle() {
 
 
 /**
- * @Author - @DeanLogan
+ * @Author - @AdamLogan
  * @Description - Resizes the navigation sidebar based on its state (open or closed) and window width.
  * Adjusts the width and height of the sidebar and resizes the close button accordingly.
  * @param {string} navOpen - The state of the navigation sidebar ('true' for open, 'false' for closed).
@@ -73,7 +73,7 @@ function resizeNav(navOpen) {
 
 
 /**
- * @Author - @DeanLogan
+ * @Author - @AdamLogan
  * @Description - Resizes the close button (often called "burger" icon) based on window width.
  * Adjusts the font size of the close button for responsive design.
  */
@@ -90,7 +90,7 @@ function resiveClosebtn() {
 }
 
 /**
- * @Author - @DeanLogan
+ * @Author - @AdamLogan
  * @Description - Resizes the content div based on the state of the navigation sidebar (open or closed) and window width.
  * Adjusts the width and position of the content div to fit the layout.
  */
@@ -126,7 +126,7 @@ function resizeContentDiv() {
 
 
 /**
- * @Author - @DeanLogan
+ * @Author - @AdamLogan
  * @Description - Holds event listeners that are applied to every web page.
  */
 function listeners() {

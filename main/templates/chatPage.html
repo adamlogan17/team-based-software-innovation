@@ -2,7 +2,7 @@
 {% block content%}
 
 <!-- 
-    Author: @AdamLogan
+    Author: @DeanLogan
 -->
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Chat</title>
     <link rel="icon" type="image/x-icon" href="{% static 'assets/img/fosterCareImg.png' %}">
     <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
     <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -21,7 +21,7 @@
             <!-- This is for the sidebar/navigation, this will change depending on the access levels the user has. -->
             <div class="sidebar" id="menu">
                 <div class="toggleButton">
-                    <p><span class="closebtn" onclick="navToggle()">&#9776;</span>&nbsp;&nbsp;</p>
+                    <p><span class="closebtn" onclick="navToggleOnChatPage()">&#9776;</span>&nbsp;&nbsp;</p>
                 </div>
                 <br />
                 <div id="menu-items">
@@ -40,16 +40,21 @@
             <div class="content">
                 <div>
                     <img src="{% static 'assets/img/fosterCareImg.png' %}" alt="logo" />
-                    <h1>Home Page</h1>
+                    <h1>Social worker chat</h1>
                 </div>
                 
-                <h2>Welcome to this prototype for a system to help children in foster care</h2>
+                <div class="chat"></div> <!-- this div will be populated with the chat bubbles as the user or chat communicate with each other -->
+            </div>
+            
+            <div class="bottom-bar">
+                <textarea autocomplete="chrome-off" id="userInput" type="text" required placeholder="ENTER TEXT"></textarea>
             </div>
 
         </main>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="{% static 'assets/js/general.js' %}"></script>
+        <script src="{% static 'assets/js/chatPage.js' %}"></script>
     </body>
 </html>
 
