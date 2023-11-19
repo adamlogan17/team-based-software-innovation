@@ -1,0 +1,20 @@
+# Python Virtual Environment
+/.venv
+venv
+activate_env.ps1
+.vscode/settings.json
+/Scripts
+/Lib
+/pyvenv.cfg
+
+# django files
+main/__pycache__/
+mysite/__pycache__/
+database/__pycache__/
+
+*.sqlite3-shm
+*.sqlite3-wal
+
+*.pyc
+
+__pycache__
