@@ -28,3 +28,11 @@ def chat(request):
 '''
 def receive_message(request):
     return JsonResponse({'message': 'response from social worker'})
+
+'''
+    @Author: @DeanLogan
+    @Description: Renders the settings.html file to be displayed to the user.
+    @param: request -  HttpRequest object that contains metadata about the request
+'''
+def settings(request):
+    return render(request, 'settings.html', {'form': CustomLoginForm()})

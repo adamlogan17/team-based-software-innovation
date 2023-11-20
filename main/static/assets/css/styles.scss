@@ -24,6 +24,31 @@
     //--transition-1: all .23s ease-in-out;
 }
 
+
+.light-mode{
+    --color-primary: #FFFFFF;
+    --color-secondary: #b92261;
+    --color-tertiary: #000000;
+    --color-black: #000;
+    --color-white: #FFFFFF;
+    --color-grey: #f8f8f8;
+    --color-chat-bubble-user: #b92261;
+    --color-chat-bubble-bot: #47535c;
+    --color-progression-bar: #000000;
+}
+
+.high-contrast-mode{
+    --color-primary: #FFFFFF;
+    --color-secondary: #000000;
+    --color-tertiary: #000000;
+    --color-black: #000;
+    --color-white: #FFFFFF;
+    --color-grey: #f8f8f8;
+    --color-chat-bubble-user: #000000;
+    --color-chat-bubble-bot: #000000;
+    --color-progression-bar: #f8f8f8;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -266,4 +291,24 @@ body {
         transform: translateY(0px);
         opacity: 1;
     }
+}
+
+// Set a style for all buttons
+button {
+    font-size: inherit;
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.container {
+    padding: 16px;
 }

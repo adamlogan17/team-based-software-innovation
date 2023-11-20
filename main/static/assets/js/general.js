@@ -11,8 +11,66 @@ function pageLoad() {
     navToggle();
     resizeContentDiv();
 
+    // Check the theme and font size settings, and resize the page accordingly
+    checkTheme();
+    checkFontSize();
+
+
     // Set up event listeners
     listeners();
+}
+
+
+/**
+ * @Author - @DeanLogan
+ * @Description - Logs out the user from the system by displaying an alert message and redirecting to the logout page.
+ */
+function logout(){
+    alert('You have successfully logged out of the system.');
+    window.location.href = '/logout';
+}
+
+/**
+ * @Author - @DeanLogan
+ * @Description - Checks the user's selected theme and applies it to the page's body element.
+ * Removes non-default themes to ensure only one theme is applied at a time.
+ */
+function checkTheme() {
+    var theme = localStorage.getItem('theme'); // Get the user's selected theme from local storage
+    let element = document.body; // Get the body element of the page
+
+    // Remove non-default themes to ensure only one theme is applied at a time
+    element.classList.remove('light-mode');
+    element.classList.remove('high-contrast-mode');
+
+    // Check the selected theme and apply it to the page's body element
+    if (theme == 'light-mode') {
+        element.classList.add('light-mode'); // Apply the light mode theme
+    } else if (theme == 'high-contrast-mode') {
+        element.classList.add('high-contrast-mode'); // Apply the high contrast mode theme
+    }
+}
+
+/**
+ * @Author - @DeanLogan
+ * @Description - Checks the user's selected font size and applies it to the page's body element.
+ * Adjusts the font size of the body element based on user preference.
+ */
+function checkFontSize() {
+    var fontSize = localStorage.getItem('fontSize'); // Get the user's selected font size from local storage
+    var element = document.body; // Get the body element of the page
+
+    // Check the selected font size and apply it to the page's body element
+    if (fontSize == 'small') {
+        element.style.fontSize = '1.18vh'; // Apply the small font size
+    } else if (fontSize == 'large') {
+        element.style.fontSize = '2.31vh'; // Apply the large font size
+    } else {
+        element.style.fontSize = '1.48vh'; // Apply the default (medium) font size
+    }
+
+    resiveClosebtn(); // Resize the close button (burger icon for nav toggle)
+    // The size of this icon depends on the sidebar width, not what the user has selected as their font size
 }
 
 
