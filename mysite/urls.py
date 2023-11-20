@@ -19,8 +19,11 @@ from django.urls import path, include, re_path
 
 from main.views import *
 
+handler404 = custom404
+
 urlpatterns = [
     path('', include('main.urls')),
+    re_path(r'^.*/$', custom404),
 ]
 
 admin.site.site_header = "Administration"
