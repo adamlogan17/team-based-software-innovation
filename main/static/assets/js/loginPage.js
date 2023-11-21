@@ -1,5 +1,5 @@
 /**
- * @AuthorAdam Logan
+ * @Author Adam Logan
  * @Description - Executes when the page loads to ensure set up of event listeners.
  */
 function loginPageLoad() {
@@ -7,7 +7,7 @@ function loginPageLoad() {
 }
 
 /**
- * @AuthorAdam Logan
+ * @Author Adam Logan
  * @Description - Holds event listeners that are applied to the login page.
  */
 function loginListeners() {
@@ -25,7 +25,7 @@ function loginListeners() {
 }
 
 /**
- * @AuthorAdam Logan
+ * @Author Adam Logan
  * @Description - Gathers the entered login information and sends a POST request to verify the credentials.
  * If successful, the user is logged in; if not, an alert is displayed.
  */
