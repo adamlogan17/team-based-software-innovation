@@ -19,14 +19,17 @@ from django.urls import path, include, re_path
 from mysite.admin import customAdminSite
 from main.views import *
 
-handler404 = custom404
+handler404 =  custom404 # comment this line out if you want to see the old 404 page that displayed error info
 
+# Register your custom admin site
 admin.site = customAdminSite
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
-    re_path(r'^.*/$', custom404),
+    path('settings/', settings),
+    path('', include("django.contrib.auth.urls")),
+    re_path(r'^.*/$', custom404), # comment this line out if you want to see the old 404 page that displayed error info
 ]
 
 admin.site.site_header = "Administration"

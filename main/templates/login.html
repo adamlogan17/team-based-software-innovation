@@ -11,9 +11,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settings | Pathfinder</title>
+    <title>Login</title>
     <link rel="icon" type="image/x-icon" href="{% static 'assets/img/fosterCareImg.png' %}">
     <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
     <body>
         <main>
@@ -45,35 +46,31 @@
             <div class="content">
                 <div>
                     <img src="{% static 'assets/img/fosterCareImg.png' %}" alt="logo" />
-                    <h1>Settings</h1>
+                    <h1>Login</h1>
                 </div>
-                <div>
-                    <h2>Accessability</h2>
-                    <form onsubmit="return updateAccessabilityOptions()">
-                        <label class="" for="theme"><b>Theme: </b></label>
-                        <input type="radio" id="dark" name="theme" value="dark-mode" checked="checked">
-                        <label for="dark">Dark</label>
-                        <input type="radio" id="light" name="theme" value="light-mode">
-                        <label for="light">Light</label>
-                        <input type="radio" id="highContrast" name="theme" value="high-contrast-mode">
-                        <label for="highContrast">High Contrast</label><br>
-                        
-                        <label><b>Font Size: </b></label>
-                        <input type="radio" id="small" name="fontSize" value="small">
-                        <label for="small">Small</label>
-                        <input type="radio" id="medium" name="fontSize" value="medium" checked="checked">
-                        <label for="medium">Medium</label>
-                        <input type="radio" id="large" name="fontSize" value="large">
-                        <label for="large">Large</label><br>
-                        <button type="submit">Save Changes</button>
-                    </form>
-                </div>
+                <form method="post">
+                    <div class="container">
+                        {% csrf_token %}
+                        <label for="username">Username:</label>
+                        {{ form.username }}
+                        <label for="password">Password:</label>
+                        {{ form.password }}
+                        <br />
+                        <p>{{ form.captcha }}</p>
+                        <button onclick="login()" type="button">Login</button>
+                        <br />
+                        <label for="remember_me">Remember Me:</label>
+                        {{ form.remember_me }}
+                        <br />
+                        <br />
+                    </div>
+                </form>
             </div>
         </main>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="{% static 'assets/js/general.js' %}"></script>
-        <script src="{% static 'assets/js/settingsPage.js' %}"></script>
+        <script src="{% static 'assets/js/loginPage.js' %}"></script>
     </body>
 </html>
 

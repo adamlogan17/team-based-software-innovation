@@ -1,7 +1,7 @@
 var pathwayData = ''; // global variable that will hold information on each of the pathways which is taken from the database
 
 /**
- * @Author - @AdamLogan
+ * @Author - @DeanLogan
  * @Description - Executes when the page loads to ensure proper initialization and sizing of UI elements.
  * Handles navigation, theme, font size, sign-up data, and sets up event listeners.
  */
@@ -15,11 +15,9 @@ function pageLoad() {
     checkTheme();
     checkFontSize();
 
-
     // Set up event listeners
     listeners();
 }
-
 
 /**
  * @Author - @DeanLogan
@@ -75,7 +73,7 @@ function checkFontSize() {
 
 
 /**
- * @Author - @AdamLogan
+ * @Author - @DeanLogan
  * @Description - Toggles the side bar (nav) open or closed, and updates its state in session storage.
  * Adjusts UI elements by calling resizeNav and resizeContentDiv functions.
  */
@@ -98,7 +96,7 @@ function navToggle() {
 
 
 /**
- * @Author - @AdamLogan
+ * @Author - @DeanLogan
  * @Description - Resizes the navigation sidebar based on its state (open or closed) and window width.
  * Adjusts the width and height of the sidebar and resizes the close button accordingly.
  * @param {string} navOpen - The state of the navigation sidebar ('true' for open, 'false' for closed).
@@ -131,7 +129,7 @@ function resizeNav(navOpen) {
 
 
 /**
- * @Author - @AdamLogan
+ * @Author - @DeanLogan
  * @Description - Resizes the close button (often called "burger" icon) based on window width.
  * Adjusts the font size of the close button for responsive design.
  */
@@ -148,7 +146,7 @@ function resiveClosebtn() {
 }
 
 /**
- * @Author - @AdamLogan
+ * @Author - @DeanLogan
  * @Description - Resizes the content div based on the state of the navigation sidebar (open or closed) and window width.
  * Adjusts the width and position of the content div to fit the layout.
  */
@@ -184,7 +182,7 @@ function resizeContentDiv() {
 
 
 /**
- * @Author - @AdamLogan
+ * @Author - @DeanLogan
  * @Description - Holds event listeners that are applied to every web page.
  */
 function listeners() {
@@ -200,6 +198,16 @@ function listeners() {
             menu.dataset.activeIndex = index;
         }
     });
+
+    /* Login and signup */
+    // When the user clicks anywhere outside of the modal (pop-up), close it
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('id01') || event.target == document.getElementById('id02') || event.target == document.getElementById('id03')) {
+            document.getElementById('id01').style.display = "none";
+            document.getElementById('id02').style.display = "none";
+            document.getElementById('id03').style.display = "none";
+        }
+    }
 }
 
 // Run the pageLoad function when the window is fully loaded

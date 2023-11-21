@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-AUTH_USER_MODEL = 'database.CustomUser'
 
 # Application definition
 
@@ -94,6 +93,7 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
+AUTH_USER_MODEL = 'database.CustomUser'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -139,7 +139,7 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGOUT_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/login"
 
 RECAPTCHA_PUBLIC_KEY = '6LfnPW4oAAAAALM65qUErp5CGjZHQ4VPRRYWbPsc'
 RECAPTCHA_PRIVATE_KEY = '6LfnPW4oAAAAABh3tQ-V0-EmfxkfSbtUYtQrAN11'

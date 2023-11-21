@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
 from django.contrib.auth.models import BaseUserManager
+from django.utils import timezone
 
 class AddressTable(models.Model):
     addressId = models.IntegerField(primary_key=True, auto_created=True)
@@ -47,6 +48,8 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         verbose_name = "User"
 
     def save(self, *args, **kwargs):
+        # Set the password using the set_password method
+        # This assumes that you have a field named 'password' in your model
         self.set_password(self.password)
         super().save(*args, **kwargs)
 

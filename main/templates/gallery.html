@@ -11,9 +11,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settings | Pathfinder</title>
+    <title>Gallery</title>
     <link rel="icon" type="image/x-icon" href="{% static 'assets/img/fosterCareImg.png' %}">
     <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
     <body>
         <main>
@@ -28,7 +29,7 @@
                     <a href="/settings", target="_parent" class="menu-item">Settings</a>
                     {% if user.is_authenticated and user.username == "admin" %} <!-- displays link to admin page if user is the admin -->
                         <a href="/admin" class="menu-item">Admin Page</a>
-                    {% elif user.is_authenticated and user.username != "admin" %} <!-- displays link to grade dashboard page if user is the student -->
+                    {% elif user.is_authenticated and user.username != "admin" %} 
                         <a href="/chat" class="menu-item">Chat</a>
                         <a href="/gallery" class="menu-item">Gallery</a>
                         <a href="/journal" class="menu-item">Journal</a>
@@ -41,39 +42,35 @@
                 </div>
                 <div id="menu-background-pattern"></div> <!-- this is for the dots that appear in the background of the side bar -->
             </div>
-
+            
             <div class="content">
                 <div>
                     <img src="{% static 'assets/img/fosterCareImg.png' %}" alt="logo" />
-                    <h1>Settings</h1>
+                    <h1>Gallery</h1>
                 </div>
-                <div>
-                    <h2>Accessability</h2>
-                    <form onsubmit="return updateAccessabilityOptions()">
-                        <label class="" for="theme"><b>Theme: </b></label>
-                        <input type="radio" id="dark" name="theme" value="dark-mode" checked="checked">
-                        <label for="dark">Dark</label>
-                        <input type="radio" id="light" name="theme" value="light-mode">
-                        <label for="light">Light</label>
-                        <input type="radio" id="highContrast" name="theme" value="high-contrast-mode">
-                        <label for="highContrast">High Contrast</label><br>
-                        
-                        <label><b>Font Size: </b></label>
-                        <input type="radio" id="small" name="fontSize" value="small">
-                        <label for="small">Small</label>
-                        <input type="radio" id="medium" name="fontSize" value="medium" checked="checked">
-                        <label for="medium">Medium</label>
-                        <input type="radio" id="large" name="fontSize" value="large">
-                        <label for="large">Large</label><br>
-                        <button type="submit">Save Changes</button>
-                    </form>
-                </div>
+                <h2>This is what the gallery would look like.</h2>
+
+                <img src="{% static 'assets/img/fosterCareImg.png' %}" alt="logo" />
+                <img src="{% static 'assets/img/fosterCareImg.png' %}" alt="logo" />
+                <img src="{% static 'assets/img/fosterCareImg.png' %}" alt="logo" />
+                <img src="{% static 'assets/img/fosterCareImg.png' %}" alt="logo" />
+                <img src="{% static 'assets/img/fosterCareImg.png' %}" alt="logo" />
+                <img src="{% static 'assets/img/fosterCareImg.png' %}" alt="logo" />
+                <img src="{% static 'assets/img/fosterCareImg.png' %}" alt="logo" />
+                <img src="{% static 'assets/img/fosterCareImg.png' %}" alt="logo" />
+                <img src="{% static 'assets/img/fosterCareImg.png' %}" alt="logo" />
+                <img src="{% static 'assets/img/fosterCareImg.png' %}" alt="logo" />
+                <img src="{% static 'assets/img/fosterCareImg.png' %}" alt="logo" />
+                <img src="{% static 'assets/img/fosterCareImg.png' %}" alt="logo" />
+                <img src="{% static 'assets/img/fosterCareImg.png' %}" alt="logo" />
+                <img src="{% static 'assets/img/fosterCareImg.png' %}" alt="logo" />
+                <img src="{% static 'assets/img/fosterCareImg.png' %}" alt="logo" />
             </div>
         </main>
-
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.0/chart.min.js" integrity="sha512-lkEx3HSoujDP3+V+i46oZpNx3eK67QPiWiCwoeQgR1I+4kutWAuOSs3BxEUZt4U/mUfyY5uDHlypuQ1HHKVykA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="{% static 'assets/js/general.js' %}"></script>
-        <script src="{% static 'assets/js/settingsPage.js' %}"></script>
     </body>
 </html>
 

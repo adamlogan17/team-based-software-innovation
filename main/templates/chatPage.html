@@ -21,24 +21,23 @@
             <!-- This is for the sidebar/navigation, this will change depending on the access levels the user has. -->
             <div class="sidebar" id="menu">
                 <div class="toggleButton">
-                    <p><span class="closebtn" onclick="navToggleOnChatPage()">&#9776;</span>&nbsp;&nbsp;</p>
+                    <p><span class="closebtn" onclick="navToggleOnChatbotPage()">&#9776;</span>&nbsp;&nbsp;</p>
                 </div>
                 <br />
                 <div id="menu-items">
                     <a href="/" class="menu-item">Home</a>
                     <a href="/settings", target="_parent" class="menu-item">Settings</a>
-                    {% if user.is_authenticated %}
-                        {% if user.is_authenticated and user.username == "admin" %}
-                            <a href="/admin" class="menu-item">Admin Page</a>
-                        {% else %}
-                            <a href="/chat" class="menu-item">Chat</a>
-                            <a href="/gallery" class="menu-item">Gallery</a>
-                            <a href="/journal" class="menu-item">Journal</a>
-                        {% endif %}
-                        <a onclick="logout()" class="menu-item">Logout</a>
-
-                    {% else %}
+                    {% if user.is_authenticated and user.username == "admin" %} <!-- displays link to admin page if user is the admin -->
+                        <a href="/admin" class="menu-item">Admin Page</a>
+                    {% elif user.is_authenticated and user.username != "admin" %} <!-- displays link to grade dashboard page if user is the student -->
+                        <a href="/chat" class="menu-item">Chat</a>
+                        <a href="/gallery" class="menu-item">Gallery</a>
+                        <a href="/journal" class="menu-item">Journal</a>
+                    {% else %} <!-- displays login and sign-up buttons if the user is not authenticated -->
                         <a href="/login" class="menu-item">Login</a>
+                    {% endif %}
+                    {% if user.is_authenticated %} <!-- displays logout button if the user is authenticated -->
+                        <a onclick="logout()" class="menu-item">Logout</a>
                     {% endif %}
                 </div>
                 <div id="menu-background-pattern"></div> <!-- this is for the dots that appear in the background of the side bar -->
@@ -50,7 +49,7 @@
                     <h1>Social worker chat</h1>
                 </div>
                 
-                <div class="chat"></div> <!-- this div will be populated with the chat bubbles as the user or chat communicate with each other -->
+                <div class="chatbot"></div> <!-- this div will be populated with the chat bubbles as the user or chatbot communicate with each other -->
             </div>
             
             <div class="bottom-bar">
@@ -61,7 +60,7 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="{% static 'assets/js/general.js' %}"></script>
-        <script src="{% static 'assets/js/chatPage.js' %}"></script>
+        <script src="{% static 'assets/js/chatbotPage.js' %}"></script>
     </body>
 </html>
 

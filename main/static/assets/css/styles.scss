@@ -9,7 +9,7 @@
 }
 
 
-:root{ 
+:root{ //dark mode (default)
     --color-primary: #191d2b;
     --color-secondary: #27AE60;
     --color-tertiary: #FFFFFF;
@@ -23,7 +23,6 @@
     --box-shadow-1: 0 3px 15px rgba(0,0,0,.2)
     //--transition-1: all .23s ease-in-out;
 }
-
 
 .light-mode{
     --color-primary: #FFFFFF;
@@ -93,7 +92,7 @@ body {
     }
 }
 
-/* the bar that appears at the bottom of the chat page and gradedashboard page, this is pinned to the bottom of the screen */
+/* the bar that appears at the bottom of the chatbot page and gradedashboard page, this is pinned to the bottom of the screen */
 .bottom-bar{
     width: 100%;
     position: fixed;
@@ -105,7 +104,7 @@ body {
     bottom: -24px;
     margin: 1.5rem 0;
     padding-left: 3.125vw;
-    /* where the user enters text to send to the chat */
+    /* where the user enters text to send to the chatbot */
     textarea{
         width:100%;
         overflow-y: visible;
@@ -293,6 +292,62 @@ body {
     }
 }
 
+/* module information page */
+
+/* container for all of the module tables */
+.modules-container{
+    padding-left: 2.5%;
+    padding-right: 5%;
+    width:100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    position: absolute;
+    top:25.5vh;
+    padding-bottom: 50px;
+
+    //formatting for each of the module tables
+    .module-table {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 2rem;
+        padding-top: 30px;
+        .main-module-info{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 2rem;
+        }
+        .top-of-table{
+            padding-top: 25px;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 0;
+                width: 100%;
+                height: 1px;
+                background-color: var(--color-secondary);
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
+
+/* Login */
+
+// Full-width input fields
+.inputField, input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: var(--color-grey);
+    color: var(--color-tertiary);
+    font-size: inherit;
+}
+
 // Set a style for all buttons
 button {
     font-size: inherit;
@@ -311,4 +366,14 @@ button:hover {
 
 .container {
     padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+#forgotPasswordLink {
+    text-decoration: underline; // Remove the default underline
+    cursor: pointer; // Change the cursor to a pointer on hover
 }
