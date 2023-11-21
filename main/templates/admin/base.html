@@ -1,0 +1,14 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% block extrahead %}
+  <link rel="icon" type="image/x-icon" href="{% static 'assets/img/fosterCareImg.png' %}">
+{% endblock %}
+
+{% block extrastyle %}
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/adminStyles.css'" %}"/>
+{% endblock %}
+
+{% block footer %}
+  <div id="footer"></div>
+  <script src="{% static 'assets/js/adminFiles/checkTheme.js' %}"></script>
+{% endblock %}

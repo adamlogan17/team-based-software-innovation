@@ -10,7 +10,7 @@ class AddressTable(models.Model):
     county = models.CharField(max_length=50)
     def __str__(self):
         return self.addressId
-    
+
 class CustomUserManager(BaseUserManager):
     def create_user(self, username, first_name, last_name, date_of_birth, sex, role, addressId, password='admin', **extra_fields):
         if not date_of_birth:

@@ -1,0 +1,53 @@
+{% extends "admin/index.html" %}
+
+<!-- 
+    Author: @DeanLogan
+-->
+
+{% load static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" href="{% static 'assets/css/adminStyles.css' %}">{% endblock %}
+
+{% block sidebar %}
+    <div id="content-local-backup" class="backups">
+        <div class="module">
+            <table>
+                <caption>
+                    <a href="" class="section" title="Local Backups">Local Backups</a>
+                </caption>
+                <tbody id="localBackupTable">
+                    <tbody id="localBackupTable">
+                        <tr class="model-group">
+                            <th scope="row"><a href="">An example row of backup files</a></th>
+                            <td><a class="addlink restore">Rollback</a></td>
+                            <td><a class="addlink restore">Restore</a></td>
+                            <td><a class="deletelink delete">Delete</a></td>
+                        </tr>
+                    </tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div id="content-cloud-backup" class="backups">
+        <div class="module">
+            <table>
+                <caption>
+                    <a href="" class="section" title="Cloud Backups">Cloud Backups</a>
+                </caption>
+                <tbody id="cloudBackupTable">
+                    <tbody id="cloudBackupTable">
+                        <tr class="model-group">
+                            <th scope="row"><a href="">An example row of backup files</a></th>
+                            <td><a class="addlink restore">Rollback</a></td>
+                            <td><a class="addlink restore">Restore</a></td>
+                            <td><a class="deletelink delete">Delete</a></td>
+                        </tr>
+                    </tbody>
+                </tbody>
+            </table>        
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+{% endblock %}

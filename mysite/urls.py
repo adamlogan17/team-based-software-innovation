@@ -16,12 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include, re_path
 
-
+from mysite.admin import customAdminSite
 from main.views import *
 
 handler404 = custom404
 
+admin.site = customAdminSite
+
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', include('main.urls')),
     re_path(r'^.*/$', custom404),
 ]
