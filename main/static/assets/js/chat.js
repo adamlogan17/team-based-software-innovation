@@ -5,7 +5,7 @@
  */
 function chatPageLoad() {
     // Display introductory messages to the user
-    displayText("This is sample text of what a social workers text would look like","botText");
+    displayText("This is sample text of what a social workers text would look like","socialWorkerText");
     // Resize the Chat page to ensure proper UI layout
     resizeChatPage();
 }
@@ -83,7 +83,7 @@ function navToggleOnChatPage(){
  * @Description - Displays a message in the Chat interface with a specified sender.
  * Scrolls to the bottom of the chat content for viewing the new message.
  * @param {string} message - The message text to be displayed.
- * @param {string} sender - The sender of the message (either 'botText' or 'userText').
+ * @param {string} sender - The sender of the message (either 'socialWorkerText' or 'userText').
  */
 function displayText(message, sender) {
     if (message.trim().length > 0) {
@@ -99,14 +99,14 @@ function displayText(message, sender) {
 }
 
 /**
- * @Author - @KyleMcComb
+ * @Author - @DeanLogan
  * @Description - Sends message to the Chat, then passes the result of this message to the displatText functio
  * @param {string} inputMessage - a message in form of a string that will be sent to the Chat
  */
 function processUserInput(inputMessage) {
-    // Make an AJAX request to your server to get the bot response
+    // Make an AJAX request to your server to get the social worker response
     $.get("/receive_message/", { message: inputMessage }, function (data) {
-        displayText(data.message, "botText"); //display bot response 
+        displayText(data.message, "socialWorkerText"); //display social worker response 
     });
 }
 

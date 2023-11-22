@@ -21,7 +21,7 @@
             <!-- This is for the sidebar/navigation, this will change depending on the access levels the user has. -->
             <div class="sidebar" id="menu">
                 <div class="toggleButton">
-                    <p><span class="closebtn" onclick="navToggle()">&#9776;</span>&nbsp;&nbsp;</p>
+                    <p><span class="closebtn" onclick="navToggleOnJournalPage()">&#9776;</span>&nbsp;&nbsp;</p>
                 </div>
                 <br />
                 <div id="menu-items">
@@ -48,13 +48,58 @@
                     <img src="{% static 'assets/img/fosterCareImg.png' %}" alt="logo" />
                     <h1>Journal</h1>
                 </div>
-                <h2>It appears that you do not have access to this page. Please visit one of the other pages.</h2>
+
+                <h2>Here you can see your journal entries or enter them, as this is a prototype none of this is stored within the db, but you can still enter text and see the entry appear on the page</h2>
+                
+                <div class="journals-container">
+                    <div class="journal-table">
+                        <div class="top-of-table">
+                            <p><b class="heading">Date: </b><span> 12/4/2018</span></p>
+                        </div>
+                        <div>
+                            <p><b class="heading">Entry: </b><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At auctor urna nunc id cursus metus. Proin fermentum leo vel orci porta. Tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra. Euismod lacinia at quis risus sed vulputate. Augue lacus viverra vitae congue eu consequat ac felis. Luctus venenatis lectus magna fringilla urna porttitor rhoncus. Eget velit aliquet sagittis id. Euismod elementum nisi quis eleifend. Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque. Dictum sit amet justo donec enim.
+                            <br /><br />
+                            Laoreet non curabitur gravida arcu. Facilisis gravida neque convallis a cras semper. Amet nulla facilisi morbi tempus iaculis urna id volutpat lacus. Nibh ipsum consequat nisl vel pretium lectus quam id leo. Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque. Semper viverra nam libero justo. Nunc vel risus commodo viverra. Sed euismod nisi porta lorem mollis aliquam ut porttitor. Iaculis at erat pellentesque adipiscing commodo elit at imperdiet dui. Sapien pellentesque habitant morbi tristique senectus et netus et malesuada. Nibh venenatis cras sed felis eget velit aliquet. Pellentesque massa placerat duis ultricies.
+                            <br /><br />
+                            Nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue. Tellus at urna condimentum mattis. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit. Eros in cursus turpis massa tincidunt dui. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Consectetur libero id faucibus nisl tincidunt eget nullam non nisi. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin. Tellus id interdum velit laoreet. Est sit amet facilisis magna. Ipsum a arcu cursus vitae congue. Eros donec ac odio tempor orci. Nulla posuere sollicitudin aliquam ultrices sagittis. Vitae tempus quam pellentesque nec nam aliquam sem et tortor. Pharetra massa massa ultricies mi quis hendrerit dolor magna. Nec dui nunc mattis enim ut tellus elementum. Velit scelerisque in dictum non consectetur a erat nam at.
+                            <br /><br />
+                            Justo eget magna fermentum iaculis eu non diam phasellus. Amet porttitor eget dolor morbi non arcu. Suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse. Orci phasellus egestas tellus rutrum tellus. Nulla porttitor massa id neque aliquam vestibulum morbi blandit cursus. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Ullamcorper malesuada proin libero nunc consequat interdum varius sit. Senectus et netus et malesuada fames ac turpis egestas integer. Dolor sit amet consectetur adipiscing elit pellentesque habitant. Mattis nunc sed blandit libero volutpat sed cras ornare arcu. Mus mauris vitae ultricies leo integer.
+                            <br /><br />
+                            Mauris rhoncus aenean vel elit scelerisque mauris. Lobortis mattis aliquam faucibus purus in massa tempor nec feugiat. In iaculis nunc sed augue lacus viverra vitae congue eu. Aliquet risus feugiat in ante metus. Ut etiam sit amet nisl purus. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Montes nascetur ridiculus mus mauris vitae ultricies. Blandit libero volutpat sed cras. At varius vel pharetra vel turpis. Lectus vestibulum mattis ullamcorper velit sed ullamcorper. Nibh cras pulvinar mattis nunc. Elementum nibh tellus molestie nunc non. Ut morbi tincidunt augue interdum velit euismod in. Et malesuada fames ac turpis egestas sed tempus. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant. Euismod nisi porta lorem mollis aliquam ut porttitor. Ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget.
+                            <br /><br />
+                            Eget nunc scelerisque viverra mauris in aliquam sem. Porttitor lacus luctus accumsan tortor posuere. Neque sodales ut etiam sit amet nisl purus in. Volutpat ac tincidunt vitae semper quis lectus nulla. Mauris in aliquam sem fringilla ut morbi. Pharetra diam sit amet nisl suscipit. Tincidunt praesent semper feugiat nibh sed pulvinar. Bibendum est ultricies integer quis auctor elit sed. Pretium lectus quam id leo in vitae turpis massa. Ac turpis egestas maecenas pharetra convallis. Eget mauris pharetra et ultrices neque ornare. Non curabitur gravida arcu ac tortor dignissim. Et netus et malesuada fames ac turpis egestas sed.</span></p>
+                        </div>
+                    </div>
+                    <div class="journal-table">
+                        <div class="top-of-table">
+                            <p><b class="heading">Date: </b><span> 24/6/2020</span></p>
+                        </div>
+                        <div>
+                            <p><b class="heading">Entry: </b><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At auctor urna nunc id cursus metus. Proin fermentum leo vel orci porta. Tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra. Euismod lacinia at quis risus sed vulputate. Augue lacus viverra vitae congue eu consequat ac felis. Luctus venenatis lectus magna fringilla urna porttitor rhoncus. Eget velit aliquet sagittis id. Euismod elementum nisi quis eleifend. Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque. Dictum sit amet justo donec enim.
+                                <br /><br />
+                                Laoreet non curabitur gravida arcu. Facilisis gravida neque convallis a cras semper. Amet nulla facilisi morbi tempus iaculis urna id volutpat lacus. Nibh ipsum consequat nisl vel pretium lectus quam id leo. Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque. Semper viverra nam libero justo. Nunc vel risus commodo viverra. Sed euismod nisi porta lorem mollis aliquam ut porttitor. Iaculis at erat pellentesque adipiscing commodo elit at imperdiet dui. Sapien pellentesque habitant morbi tristique senectus et netus et malesuada. Nibh venenatis cras sed felis eget velit aliquet. Pellentesque massa placerat duis ultricies.
+                                <br /><br />
+                                Nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue. Tellus at urna condimentum mattis. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit. Eros in cursus turpis massa tincidunt dui. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Consectetur libero id faucibus nisl tincidunt eget nullam non nisi. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin. Tellus id interdum velit laoreet. Est sit amet facilisis magna. Ipsum a arcu cursus vitae congue. Eros donec ac odio tempor orci. Nulla posuere sollicitudin aliquam ultrices sagittis. Vitae tempus quam pellentesque nec nam aliquam sem et tortor. Pharetra massa massa ultricies mi quis hendrerit dolor magna. Nec dui nunc mattis enim ut tellus elementum. Velit scelerisque in dictum non consectetur a erat nam at.
+                                <br /><br />
+                                Justo eget magna fermentum iaculis eu non diam phasellus. Amet porttitor eget dolor morbi non arcu. Suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse. Orci phasellus egestas tellus rutrum tellus. Nulla porttitor massa id neque aliquam vestibulum morbi blandit cursus. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Ullamcorper malesuada proin libero nunc consequat interdum varius sit. Senectus et netus et malesuada fames ac turpis egestas integer. Dolor sit amet consectetur adipiscing elit pellentesque habitant. Mattis nunc sed blandit libero volutpat sed cras ornare arcu. Mus mauris vitae ultricies leo integer.
+                                <br /><br />
+                                Mauris rhoncus aenean vel elit scelerisque mauris. Lobortis mattis aliquam faucibus purus in massa tempor nec feugiat. In iaculis nunc sed augue lacus viverra vitae congue eu. Aliquet risus feugiat in ante metus. Ut etiam sit amet nisl purus. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Montes nascetur ridiculus mus mauris vitae ultricies. Blandit libero volutpat sed cras. At varius vel pharetra vel turpis. Lectus vestibulum mattis ullamcorper velit sed ullamcorper. Nibh cras pulvinar mattis nunc. Elementum nibh tellus molestie nunc non. Ut morbi tincidunt augue interdum velit euismod in. Et malesuada fames ac turpis egestas sed tempus. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant. Euismod nisi porta lorem mollis aliquam ut porttitor. Ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget.
+                                <br /><br />
+                                Eget nunc scelerisque viverra mauris in aliquam sem. Porttitor lacus luctus accumsan tortor posuere. Neque sodales ut etiam sit amet nisl purus in. Volutpat ac tincidunt vitae semper quis lectus nulla. Mauris in aliquam sem fringilla ut morbi. Pharetra diam sit amet nisl suscipit. Tincidunt praesent semper feugiat nibh sed pulvinar. Bibendum est ultricies integer quis auctor elit sed. Pretium lectus quam id leo in vitae turpis massa. Ac turpis egestas maecenas pharetra convallis. Eget mauris pharetra et ultrices neque ornare. Non curabitur gravida arcu ac tortor dignissim. Et netus et malesuada fames ac turpis egestas sed.</span></p>
+                        </div>
+                    </div>
+                </div> 
             </div>
+            
+            <div class="bottom-bar journal-bottom-bar">
+                <textarea autocomplete="chrome-off" id="userInput" type="text" required placeholder="ENTER TEXT"></textarea>
+            </div>
+
         </main>
-        
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.0/chart.min.js" integrity="sha512-lkEx3HSoujDP3+V+i46oZpNx3eK67QPiWiCwoeQgR1I+4kutWAuOSs3BxEUZt4U/mUfyY5uDHlypuQ1HHKVykA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="{% static 'assets/js/general.js' %}"></script>
+        <script src="{% static 'assets/js/journal.js' %}"></script>
     </body>
 </html>
 

@@ -92,7 +92,6 @@ body {
     }
 }
 
-/* the bar that appears at the bottom of the chatbot page and gradedashboard page, this is pinned to the bottom of the screen */
 .bottom-bar{
     width: 100%;
     position: fixed;
@@ -104,7 +103,6 @@ body {
     bottom: -24px;
     margin: 1.5rem 0;
     padding-left: 3.125vw;
-    /* where the user enters text to send to the chatbot */
     textarea{
         width:100%;
         overflow-y: visible;
@@ -122,6 +120,10 @@ body {
         color: var(--color-tertiary);
         height: 70%;
     }
+}
+
+.journal-bottom-bar{
+    min-height:185px;
 }
 
 .hidden{
@@ -263,7 +265,7 @@ body {
     }
 }
 
-.botText {
+.socialWorkerText {
     text-align: left;
     p {
         color: var(--color-white);
@@ -335,4 +337,38 @@ span.psw {
 #forgotPasswordLink {
     text-decoration: underline; // Remove the default underline
     cursor: pointer; // Change the cursor to a pointer on hover
+}
+
+/* container for all of the journal tables */
+.journals-container{
+    padding-left: 2.5%;
+    padding-right: 5%;
+    width:100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    position: absolute;
+    padding-bottom: 50px;
+
+    //formatting for each of the journal tables
+    .journal-table {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 2rem;
+        padding-top: 30px;
+        animation: floatup .5s forwards;
+        .top-of-table{
+            padding-top: 25px;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 0;
+                width: 100%;
+                height: 1px;
+                background-color: var(--color-secondary);
+                transform: translateX(-50%);
+            }
+        }
+    }
 }

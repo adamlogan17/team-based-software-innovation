@@ -21,7 +21,7 @@
             <!-- This is for the sidebar/navigation, this will change depending on the access levels the user has. -->
             <div class="sidebar" id="menu">
                 <div class="toggleButton">
-                    <p><span class="closebtn" onclick="navToggleOnChatbotPage()">&#9776;</span>&nbsp;&nbsp;</p>
+                    <p><span class="closebtn" onclick="navToggleOnChatPage()">&#9776;</span>&nbsp;&nbsp;</p>
                 </div>
                 <br />
                 <div id="menu-items">
@@ -49,7 +49,7 @@
                     <h1>Social worker chat</h1>
                 </div>
                 
-                <div class="chatbot"></div> <!-- this div will be populated with the chat bubbles as the user or chatbot communicate with each other -->
+                <div class="chat"></div> <!-- this div will be populated with the chat bubbles as the user or social worker communicate with each other -->
             </div>
             
             <div class="bottom-bar">
@@ -60,7 +60,7 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="{% static 'assets/js/general.js' %}"></script>
-        <script src="{% static 'assets/js/chatbotPage.js' %}"></script>
+        <script src="{% static 'assets/js/chat.js' %}"></script>
     </body>
 </html>
 
