@@ -5,8 +5,8 @@ from django.utils import timezone
 
 class AddressTable(models.Model):
     addressId = models.IntegerField(primary_key=True, auto_created=True)
-    addressLine1 = models.CharField(max_length=100)
-    addressLine2 = models.CharField(max_length=100)
+    address_line1 = models.CharField(max_length=100)
+    address_line2 = models.CharField(max_length=100)
     postcode = models.CharField(max_length=8)
     county = models.CharField(max_length=50)
     def __str__(self):
@@ -32,7 +32,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     date_of_birth = models.DateField()
-    sex = models.CharField(max_length=10)
+    sex = models.CharField(max_length=1)
     role = models.CharField(max_length=30)
     addressId = models.IntegerField()  # You might want to use ForeignKey if the address is a separate model.
 
@@ -56,21 +56,24 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 class Child(models.Model):
     childID = models.IntegerField(primary_key=True, auto_created=True)
     userID = models.OneToOneField(CustomUser, on_delete=models.CASCADE, unique=True)
-    socialWorker = models.ForeignKey(CustomUser, on_delete=models.DO_NOTHING, related_name='socialWorker')
+    social_workerID = models.ForeignKey(CustomUser, on_delete=models.DO_NOTHING, related_name='socialWorker')
     def __str__(self):
         return str(self.childID)
 
 class Photos(models.Model):
     photoID = models.IntegerField(primary_key=True, auto_created=True)
-    blobLink = models.CharField(max_length=50)
-    photoDate = models.DateTimeField()
-    childPhotoID = models.ManyToManyField(Child)
+    blob_link = models.CharField(max_length=50)
+    photo_date = models.DateTimeField(default=timezone.now)
+    child_photoID = models.ManyToManyField(Child)
+    uploaderID = models.ForeignKey(CustomUser, on_delete=models.DO_NOTHING, default=1, related_name='uploader')
     def __str__(self):
         return str(self.photoID)
 
 class ChildrenHomes(models.Model):
-    childrenHomes = models.IntegerField(primary_key=True, auto_created=True)
+    children_homeID = models.IntegerField(primary_key=True, auto_created=True)
     addressID = models.ForeignKey(AddressTable, on_delete=models.CASCADE)
+    director = models.ForeignKey(CustomUser, on_delete=models.DO_NOTHING, default=1, related_name='director')
+    name = models.CharField(max_length=50, default='Home')
     def __str__(self):
         return str(self.childrenHomes)
 
@@ -80,3 +83,11 @@ class Staff(models.Model):
     userID = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.staffID)
+    
+class Journal(models.Model):
+    entryID = models.IntegerField(primary_key=True, auto_created=True)
+    entry = models.CharField(max_length=1000000)
+    entry_date = models.DateTimeField()
+    userID = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    def __str__(self):
+        return str(self.entryID)
