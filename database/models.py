@@ -10,7 +10,7 @@ class AddressTable(models.Model):
     postcode = models.CharField(max_length=8)
     county = models.CharField(max_length=50)
     def __str__(self):
-        return self.addressId
+        return str(self.addressId)
 
 class CustomUserManager(BaseUserManager):
     def create_user(self, username, first_name, last_name, date_of_birth, sex, role, addressId, password='admin', **extra_fields):
@@ -54,11 +54,11 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         super().save(*args, **kwargs)
 
 class Child(models.Model):
-    childIdD = models.IntegerField(primary_key=True, auto_created=True)
+    childID = models.IntegerField(primary_key=True, auto_created=True)
     userID = models.OneToOneField(CustomUser, on_delete=models.CASCADE, unique=True)
     socialWorker = models.ForeignKey(CustomUser, on_delete=models.DO_NOTHING, related_name='socialWorker')
     def __str__(self):
-        return self.childID
+        return str(self.childID)
 
 class Photos(models.Model):
     photoID = models.IntegerField(primary_key=True, auto_created=True)
@@ -66,17 +66,17 @@ class Photos(models.Model):
     photoDate = models.DateTimeField()
     childPhotoID = models.ManyToManyField(Child)
     def __str__(self):
-        return self.photoID
+        return str(self.photoID)
 
 class ChildrenHomes(models.Model):
     childrenHomes = models.IntegerField(primary_key=True, auto_created=True)
     addressID = models.ForeignKey(AddressTable, on_delete=models.CASCADE)
     def __str__(self):
-        return self.childrenHomes
+        return str(self.childrenHomes)
 
 class Staff(models.Model):
     staffID = models.IntegerField(primary_key=True, auto_created=True)
     childrenHomeID = models.ForeignKey(AddressTable, on_delete=models.CASCADE)
     userID = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     def __str__(self):
-        return self.staffID
+        return str(self.staffID)

@@ -27,8 +27,8 @@ class AddressTableAdmin(admin.ModelAdmin):
 
 @admin.register(Child)
 class ChildAdmin(admin.ModelAdmin):
-    list_display = ('childIdD', 'userID', 'socialWorker')
-    search_fields = ('childIdD', 'userID__username', 'socialWorker__username')
+    list_display = ('childID', 'userID', 'socialWorker')
+    search_fields = ('childID', 'userID__username', 'socialWorker__username')
     list_filter = ('userID__role', 'socialWorker__role')
 
 @admin.register(Photos)
