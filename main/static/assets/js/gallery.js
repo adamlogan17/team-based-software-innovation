@@ -1,7 +1,11 @@
+
 /**
- * Fetches images from the an endpoint (will be database, in future) and displays them in the "imageContainer" div.
- * @function displayImages
- * @author Adam Logan
+ * Fetches a set of random dog images from the Dog CEO's Dog API and displays them on the web page.
+ * The images are loaded into the 'imageContainer' element.
+ * @Author - Code written by @AdamLogan, docstring by @DeanLogan
+ * @async
+ * @function
+ * @returns {Promise<void>} A promise that resolves when the images are successfully loaded and displayed.
  */
 async function displayImages() {
   $.get('https://dog.ceo/api/breeds/image/random/50', 

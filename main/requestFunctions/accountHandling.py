@@ -16,7 +16,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 
 """
-    @Author: @DeanLogan
+    @Author: Code written by @AdamLogan, docstring by @DeanLogan
     @Description: Verifies user authentication, including two-factor authentication (2FA) if enabled.
     @param: request - The HttpRequest object containing user authentication and 2FA information.
     @return: JsonResponse indicating whether the user is logged in ('true' or 'false') and any errors.

@@ -5,13 +5,13 @@ from django.shortcuts import render
 from django.http import JsonResponse
 
 '''
-    @Author: @KyleMcComb
+    @Author: @DeanLogan - quick help from @KyleMcComb for JsonResponse confirming how to send a response back to the client (happened in person sorry for no recording)
 '''
 def receive_message(request):
     return JsonResponse({'message': 'response from social worker'})
 
 '''
-    @Author: @KyleMcComb
+    @Author: @DeanLogan - quick help from @KyleMcComb in debugging
     @Description: Renders the index.html file to be displayed to the user.
     @param: request -  HttpRequest object that contains metadata about the request
 '''
