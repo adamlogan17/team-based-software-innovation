@@ -16,6 +16,7 @@ async function displayImages() {
       images.forEach(url => {
         const imgElement = document.createElement('img');
         imgElement.src = url;
+        imgElement.alt = "Photo of dog";
         imgElement.style.margin = '5px';
         imageContainer.appendChild(imgElement);
       });
